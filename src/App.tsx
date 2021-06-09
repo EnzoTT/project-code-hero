@@ -1,19 +1,8 @@
-import { useEffect } from 'react'
-import api from './app/services/api'
-
+import Home from './app/pages/Home'
 function App() {
-  useEffect(() => {
-   api
-    .get(
-      `/characters`
-    ).then((res) => {
-      console.log(res)
-    })
-  }, [])
-
   return (
     <div className="App">
-      App
+      <Home/>
     </div>
   );
 }
