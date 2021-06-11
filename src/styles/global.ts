@@ -22,12 +22,14 @@ html, body, #root {
 }
 
 body, header, code {
-  font-family: "Co Text", sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  color:var(--dark-smoke);
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
 }
 
 button {
@@ -38,17 +40,11 @@ button {
 
 //Váriaveis de cor
 :root {
-  --light-grey: #fcfcfc;
-  --background-grey: #f2f2f2;
-  --primary-white: #FFFFFF;
-  --primary-grey: #707070;
-  --primary-orange: #DE653E;
-  --primary-purple: #5E518F;
-  --secondary-purple: #44407E; 
-  --primary-red: #FF3F2F;
-  --secondary-grey: #B2B2B2;
-  --primary-pink: #D91056;
-  --primary-blue: #455CC7;
-  --primary-yellow: #FFD281;
+  --white: #FFFFFF;
+  --snow:#F5F5F5;
+  --dark-snow:#E5E5E5;
+  --smoke:#8E8E8E;
+  --dark-smoke:#555555;
+  --dark-blue:#167ABC;
 }
 `;

@@ -1,7 +1,12 @@
 import {useEffect} from 'react'
 import api from '../../services/api'
 
+import Navbar from '../../components/Navbar'
+import Header from '../../components/Header'
+
+
 import {Container} from './styles'
+
 
 const Home=()=>{
     useEffect(() => {
@@ -15,7 +20,8 @@ const Home=()=>{
        
 return(
    <Container>
-     Home
+     <Navbar/>
+     <Header/>
    </Container>
    )
 }
