@@ -12,7 +12,7 @@ const api = axios.create({
     params:{
         ts,
         apikey:publicKey,
-        hash
+        hash,
     }
 }
 )

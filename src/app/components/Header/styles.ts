@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components'
-import {AiOutlineSearch} from 'react-icons/ai'
+import styled, { css } from 'styled-components'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 const IconCSS = css`
 width:2.4em;
@@ -8,12 +8,14 @@ height:2.4em;
 position:relative;
 right:4em;
 top:0.9em;
+
+cursor: pointer;
+
 `;
 
 export const SearchIcon = styled(AiOutlineSearch)`
   ${IconCSS};
 `;
-
 
 //Estilização utilizando o padrão mobile first
 export const Container = styled.div`
@@ -53,8 +55,26 @@ export const Container = styled.div`
         display:flex;
         width:100%;
     }
+
     //Estilo para o browser
     @media( min-width: 900px ) {
+        width:50%;
+        display:flex;
+        align-items: flex-start;
+        padding:0em 11.3em;
 
+        h1{
+            font-size:3.2em;
+        }
+        .search{
+            width:29.5em;
+            display:flex;
+            text-align:left;
+
+            h1{
+                font-size:1.9em;
+                margin:1.6em 0em 0.8em 0em;
+            }
+        }
     }
 `

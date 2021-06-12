@@ -46,5 +46,6 @@ button {
   --smoke:#8E8E8E;
   --dark-smoke:#555555;
   --dark-blue:#167ABC;
+  --shadow: #00000033;
 }
 `;
