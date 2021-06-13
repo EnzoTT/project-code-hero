@@ -7,7 +7,7 @@ import Header from '../Header'
 
 import api from '../../../services/api'
 
-//Teremos duas tabs Content e o Detail
+//Conteudo da home 
 const Content = () => {
     //Variavel para rota
     let history = useHistory();
@@ -109,14 +109,13 @@ const Content = () => {
         setMinPageNumberLimit(finalPage-5);
 
     }
-
-    
     //Vai para a pagina detalhe de certo presonagem
     function handleDetail(e: any) {
         history.push('/detail', {
             character: e
         })
     }
+    
     return (
         <Container>
             <Header handleSearch={handleSearch} handleName={handleName} />

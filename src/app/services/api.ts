@@ -7,11 +7,12 @@ const ts = Number(new Date().getTime());
 //Variavel necessaria para url da api(Documentação)
 const hash = md5(ts + privateKey + publicKey)
 
+//Criacao da api com axios
 const api = axios.create({
-    baseURL:  `http://gateway.marvel.com/v1/public/`,
-    params:{
+    baseURL: `http://gateway.marvel.com/v1/public/`,
+    params: {
         ts,
-        apikey:publicKey,
+        apikey: publicKey,
         hash,
     }
 }

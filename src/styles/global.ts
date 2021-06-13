@@ -29,6 +29,7 @@ body, header, code {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  //1em sera 10px
   font-size: 62.5%;
 }
 
@@ -48,5 +49,8 @@ button {
   --blue:#49b1f5;
   --dark-blue:#167ABC;
   --shadow: #00000033;
+
+  --red: red;
+  --black: black;
 }
 `;

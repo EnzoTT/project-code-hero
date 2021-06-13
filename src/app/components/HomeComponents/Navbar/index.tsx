@@ -1,6 +1,8 @@
 import { Container } from './styles'
 
 import Logo from '../../../assets/logo.png'
+
+//Barra de navegacao
 const Navbar = () => {
     return (
         <Container>

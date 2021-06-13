@@ -6,10 +6,11 @@ import Comics from '../../components/DetailComponents/Comics'
 import Events from '../../components/DetailComponents/Events'
 import Series from '../../components/DetailComponents/Series'
 
-
+//Pagina Detail
 const Detail = (Props: any) => {
     let history = useHistory();
     const [character] = useState(Props.history.location.state.character)
+    //Estados para trocar de tab
     const [eventsTab, setEventsTab] = useState(true);
     const [comicsTab, setComicsTab] = useState(false);
     const [seriesTab, setSeriesTab] = useState(false);
@@ -36,7 +37,6 @@ const Detail = (Props: any) => {
     }
     return (
         <Container>
-            {/* <Navbar /> */}
             {/* Header  */}
             <div className="header">
                 <button className="back" onClick={handleBack}>
@@ -56,7 +56,7 @@ const Detail = (Props: any) => {
                 </div>
             </div>
 
-            {/* Tab  */}
+            {/* Tabs  */}
             {eventsTab && <Events id={character.id} name={character.name} />}
             {comicsTab && <Comics id={character.id} name={character.name} />}
             {seriesTab && <Series id={character.id} name={character.name} />}

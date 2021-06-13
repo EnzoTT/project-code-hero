@@ -10,7 +10,7 @@ const Series = (Props: any) => {
     const [seriesArray, setSeriesArray] = useState<any>([])
     const [total, setTotal] = useState<any>(1)
 
-    //Pega os eventos desse persanogem pela api
+    //Pega as series desse persanogem pela api
     useEffect(() => {
         api.get(`/characters/${Props.id}/series?limit=24`)
             .then((res) => {

@@ -1,10 +1,9 @@
 import { Container } from './styles'
 
-
+//Card da pagina Home
 const Card = (Props: any) => {
     let series = Props.character.series.items;
     let events = Props.character.events.items;
-
 
     return (
         <Container>

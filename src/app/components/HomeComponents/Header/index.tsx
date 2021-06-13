@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Container, SearchIcon } from "./styles"
 
+//Header da Home, tem a mecanismo de busca 
 const Header = (Props: any) => {
     const [name, setName] = useState<any>("")
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 //Estilização utilizando o padrão mobile first
 export const Container = styled.div`
     background: white;
-    color:black;
+    color:var(--black);
     
     display:flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ export const Container = styled.div`
         h1{
             font-size: 3em;
             color:white;
-            background: red;
+            background: var(--red);
             padding:0.2em 0.4em;
             margin-bottom:0.2em;
         }

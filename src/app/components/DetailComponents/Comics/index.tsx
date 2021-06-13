@@ -12,7 +12,7 @@ const Comics = (Props: any) => {
     const [comicArray, setComicArray] = useState([])
     const [total, setTotal] = useState<any>(1)
 
-    //Pega os eventos desse persanogem pela api
+    //Pega as comics desse persanogem pela api
     useEffect(() => {
         api.get(`/characters/${Props.id}/comics?limit=24`)
             .then((res) => {

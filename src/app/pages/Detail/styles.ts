@@ -16,7 +16,7 @@ export const Container = styled.div`
     display:flex;
     flex-direction:column;
     color:white;
-    background: black;
+    background: var(--black);
 
     .back{
         border:none;
@@ -54,7 +54,7 @@ export const Container = styled.div`
             h1{
                 margin:0.6em 0em;
                 font-size:3.2em;
-                background: red;
+                background: var(--red);
                 padding: 0.1em;
             }
 
@@ -77,7 +77,7 @@ export const Container = styled.div`
 
         padding: 0em 13em;
         button{
-            background: red;
+            background: var(--red);
             color:white;
             width: 100%;
 
@@ -96,15 +96,15 @@ export const Container = styled.div`
 
         button:hover{
             background: white;
-            color:red;
-            border-bottom: 0.2em solid red ;
+            color:var(--red);
+            border-bottom: 0.2em solid var(--red) ;
 
         }
 
         button:disabled{
             background: white;
-            color:red;
-            border-bottom: 0.2em solid red ;
+            color:var(--red);
+            border-bottom: 0.2em solid var(--red) ;
         }
     }
 

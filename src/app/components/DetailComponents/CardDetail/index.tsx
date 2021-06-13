@@ -1,5 +1,6 @@
  import {Container} from './styles'
 
+ //Card da pagina detail
  const CardDetail=(Props:any)=>{
     return(
         <Container>
