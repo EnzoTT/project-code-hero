@@ -2,7 +2,6 @@ import { Container } from './styles'
 
 
 const Card = (Props: any) => {
-    console.log(Props.character.events.items)
     let series = Props.character.series.items;
     let events = Props.character.events.items;
 

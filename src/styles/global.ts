@@ -45,6 +45,7 @@ button {
   --dark-snow:#E5E5E5;
   --smoke:#8E8E8E;
   --dark-smoke:#555555;
+  --blue:#49b1f5;
   --dark-blue:#167ABC;
   --shadow: #00000033;
 }

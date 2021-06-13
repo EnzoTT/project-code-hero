@@ -1,8 +1,14 @@
-import {Container} from './styles'
+import { useEffect, useState } from 'react'
+import { Container } from './styles'
 
-const Detail=()=>{
-    return(
-        <Container>Detail</Container>
+import Navbar from '../../components/Navbar'
+import api from '../../services/api'
+
+const Detail = (Props: any) => {
+    return (
+        <Container>
+            <Navbar />
+        </Container>
     )
 }
 
