@@ -57,7 +57,8 @@ export const Container = styled.div`
     }
     .cardContainer:hover{
         cursor:pointer;
-        opacity:0.7;
+        box-shadow: 0em 0em 0.5em var(--black);
+
     }
     //Pagination div
     .pagination{
