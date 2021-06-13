@@ -5,7 +5,7 @@ import { Container, ArrowLeft, ArrowRight, Button, DoubleArrowLeft, DoubleArrowR
 import Card from '../Card'
 import Header from '../Header'
 
-import api from '../../services/api'
+import api from '../../../services/api'
 
 //Teremos duas tabs Content e o Detail
 const Content = () => {
@@ -87,7 +87,7 @@ const Content = () => {
     function handlePrevPage() {
         setCurrentPage(currentPage - 1)
 
-        if ((currentPage - 1) % pageLimit == 0) {
+        if (((currentPage - 1) % pageLimit) === 0) {
             setMaxPageNumberLimit(maxPageNumberLimit - pageLimit);
             setMinPageNumberLimit(minPageNumberLimit - pageLimit);
         }

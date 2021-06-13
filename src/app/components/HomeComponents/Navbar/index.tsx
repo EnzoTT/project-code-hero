@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-import Logo from '../../assets/logo.png'
+import Logo from '../../../assets/logo.png'
 const Navbar = () => {
     return (
         <Container>

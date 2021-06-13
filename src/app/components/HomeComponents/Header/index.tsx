@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { Container, SearchIcon } from "./styles"
-import api from '../../services/api'
-
 
 const Header = (Props: any) => {
     const [name, setName] = useState<any>("")

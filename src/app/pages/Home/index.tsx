@@ -1,5 +1,5 @@
-import Navbar from '../../components/Navbar'
-import Content from '../../components/Content'
+import Navbar from '../../components/HomeComponents/Navbar'
+import Content from '../../components/HomeComponents/Content'
 
 import {Container} from './styles'
 
