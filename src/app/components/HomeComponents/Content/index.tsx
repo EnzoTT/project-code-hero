@@ -35,8 +35,8 @@ const Content = () => {
                 ).then((res) => {
                     setCharacters(res.data.data.results);
 
-                    setFinalPage((Math.round(res.data.data.total / 10)))
-                    handlePagination(Math.round(res.data.data.total / 10))
+                    setFinalPage((Math.round(res.data.data.total / 10))+1)
+                    handlePagination(Math.round(res.data.data.total / 10)+1)
                 })
         } else {
             api
@@ -45,8 +45,8 @@ const Content = () => {
                 ).then((res) => {
                     setCharacters(res.data.data.results);
 
-                    setFinalPage((Math.round(res.data.data.total / 10)))
-                    handlePagination(Math.round(res.data.data.total / 10))
+                    setFinalPage((Math.round(res.data.data.total / 10))+1)
+                    handlePagination(Math.round(res.data.data.total / 10)+1)
                 })
         }
     }, [currentPage, search])
@@ -87,7 +87,7 @@ const Content = () => {
     function handlePrevPage() {
         setCurrentPage(currentPage - 1)
 
-        if (((currentPage - 1) % pageLimit) === 0) {
+        if ((((currentPage - 1) % pageLimit)) === 0) {
             setMaxPageNumberLimit(maxPageNumberLimit - pageLimit);
             setMinPageNumberLimit(minPageNumberLimit - pageLimit);
         }
@@ -104,10 +104,8 @@ const Content = () => {
     //Ultima pagina
     function handleLast() {
         setCurrentPage(finalPage)
-
         setMaxPageNumberLimit(finalPage);
         setMinPageNumberLimit(finalPage - 5);
-
     }
     //Vai para a pagina detalhe de certo presonagem
     function handleDetail(e: any) {
@@ -142,7 +140,6 @@ const Content = () => {
             </div>
 
             {/* Paginacao */}
-            {finalPage !== 0 &&
                 <div className="pagination">
 
                     <button className="icon" onClick={handleFirst} disabled={(currentPage <= pagesArray[0]) ? true : false}>
@@ -169,7 +166,6 @@ const Content = () => {
                         <DoubleArrowRight />
                     </button>
                 </div>
-            }
         </Container>
     )
 }
