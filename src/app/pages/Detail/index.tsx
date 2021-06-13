@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Container, ArrowLeft } from './styles'
 import { useHistory } from 'react-router'
 

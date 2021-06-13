@@ -1,17 +1,39 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
-import {Container} from './styles'
+import { Container } from '../styles/styles'
 import api from '../../../services/api'
+
+import CardDetail from '../CardDetail'
 
 
 const Series=(Props:any)=>{
-    useEffect(()=>{
-        
-    },[])
-    return(
+    const [seriesArray, setSeriesArray] = useState<any>([])
+
+    //Pega os eventos desse persanogem pela api
+    useEffect(() => {
+        api.get(`/characters/${Props.id}/series?limit=24`)
+            .then((res) => {
+                setSeriesArray(res.data.data.results)
+            })
+    }, [Props.id])
+
+
+    return (
         <Container>
-            <h1>Series</h1>
-            <span>The most recents Series that {Props.name} apears.</span>
+            <div className="header">
+                <h1>SERIES</h1>
+                <span>The most recents series that {Props.name} apears.</span>
+            </div>
+            <div className="cardGrid">
+                {
+                    seriesArray.map((item:any) => {
+                        return (
+                            <CardDetail item={item}/>
+                        )
+                    }
+                    )
+                }
+            </div>
         </Container>
     )
 }

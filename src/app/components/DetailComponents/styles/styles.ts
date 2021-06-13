@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+//Estilo das Tabs que sao iguais
 //Estilização utilizando o padrão mobile first
 export const Container = styled.div`
     background: white;
@@ -24,5 +25,21 @@ export const Container = styled.div`
         span{
             font-size: 1.8em;
         }
+    }
+
+    .cardGrid{
+        display:grid;
+        grid-template-columns:26em 26em;
+        gap: 1em;
+    }
+
+    //Estilo para o browser
+    @media( min-width: 900px ) {
+        .cardGrid{
+        display:grid;
+        grid-template-columns:26em 26em 26em 26em 26em 26em;
+        gap: 1em;
+    }
+
     }
 `
