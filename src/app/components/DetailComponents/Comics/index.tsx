@@ -9,13 +9,16 @@ import CardDetail from '../CardDetail'
 
 
 const Comics = (Props: any) => {
-    const [comicArray, setComicArray]=useState([])
+    const [comicArray, setComicArray] = useState([])
+    const [total, setTotal] = useState<any>(1)
 
     //Pega os eventos desse persanogem pela api
     useEffect(() => {
         api.get(`/characters/${Props.id}/comics?limit=24`)
             .then((res) => {
                 setComicArray(res.data.data.results)
+                setTotal(res.data.data.total)
+
             })
     }, [Props.id])
 
@@ -24,13 +27,21 @@ const Comics = (Props: any) => {
         <Container>
             <div className="header">
                 <h1>COMICS</h1>
-                <span>The most recents comic books that {Props.name} apears.</span>
+                {total !== 0 ?
+                        (
+                            <>
+                                <span>The most recents comic books that {Props.name} apears.</span>
+                            </>
+                        ):(
+                            <span>This character does not appear in any comic book.</span>
+                        )
+                }
             </div>
             <div className="cardGrid">
                 {
-                    comicArray.map((item:any) => {
+                    comicArray.map((item: any) => {
                         return (
-                            <CardDetail item={item}/>
+                            <CardDetail item={item} />
                         )
                     }
                     )

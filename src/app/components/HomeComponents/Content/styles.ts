@@ -34,7 +34,7 @@ export const Container = styled.div`
     .charactersContainer{
         padding:0em 2.4em;
         margin-top:3.2em;
-        min-height:50vh;
+        min-height:70vh;
         //Legenda
         .legend{
             color:var(--smoke);
