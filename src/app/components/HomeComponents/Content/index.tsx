@@ -22,6 +22,8 @@ const Content = () => {
     const [minPageNumberLimit, setMinPageNumberLimit] = useState<any>(0);
     const [maxPageNumberLimit, setMaxPageNumberLimit] = useState<any>(5);
     const [finalPage, setFinalPage] = useState<any>(0);
+    const [total, setTotal] = useState<any>(0);
+
     //Controle de busca
     const [name, setName] = useState<any>("")
     const [search, setSearch] = useState<any>(false)
@@ -34,9 +36,10 @@ const Content = () => {
                     `/characters?limit=10&&offset=${10 * (currentPage - 1)}`
                 ).then((res) => {
                     setCharacters(res.data.data.results);
-
-                    setFinalPage((Math.round(res.data.data.total / 10))+1)
-                    handlePagination(Math.round(res.data.data.total / 10)+1)
+                    
+                    setTotal(res.data.data.total)
+                    setFinalPage((Math.round(res.data.data.total / 10)) + 1)
+                    handlePagination(Math.round(res.data.data.total / 10) + 1)
                 })
         } else {
             api
@@ -45,8 +48,9 @@ const Content = () => {
                 ).then((res) => {
                     setCharacters(res.data.data.results);
 
-                    setFinalPage((Math.round(res.data.data.total / 10))+1)
-                    handlePagination(Math.round(res.data.data.total / 10)+1)
+                    setTotal(res.data.data.total)
+                    setFinalPage((Math.round(res.data.data.total / 10)) + 1)
+                    handlePagination(Math.round(res.data.data.total / 10) + 1)
                 })
         }
     }, [currentPage, search])
@@ -140,32 +144,39 @@ const Content = () => {
             </div>
 
             {/* Paginacao */}
-                <div className="pagination">
-
-                    <button className="icon" onClick={handleFirst} disabled={(currentPage <= pagesArray[0]) ? true : false}>
-                        <DoubleArrowLeft />
-                    </button>
-                    <button className="icon" onClick={handlePrevPage} disabled={currentPage === pagesArray[0] ? true : false}>
-                        <ArrowLeft />
-                    </button>
-                    {pagesArray.map((item: any, index: any) => {
-                        if (item < maxPageNumberLimit + 1 && item > minPageNumberLimit) {
-                            return (
-                                <Button selected={item === currentPage} onClick={handlePage.bind(this, item)}>
-                                    <span>{item}</span>
-                                </Button>
-                            )
-                        } else {
-                            return ""
-                        }
-                    })}
-                    <button className="icon" onClick={handleNextPage} disabled={currentPage === pagesArray[pagesArray.length - 1] ? true : false}>
-                        <ArrowRight />
-                    </button>
-                    <button className="icon" onClick={handleLast} disabled={currentPage >= pagesArray[pagesArray.length - 1] ? true : false}>
-                        <DoubleArrowRight />
-                    </button>
-                </div>
+            <div className="pagination">
+                {total > 10 ?
+                   ( <>
+                        <button className="icon" onClick={handleFirst} disabled={(currentPage <= pagesArray[0]) ? true : false}>
+                            <DoubleArrowLeft />
+                        </button>
+                        <button className="icon" onClick={handlePrevPage} disabled={currentPage === pagesArray[0] ? true : false}>
+                            <ArrowLeft />
+                        </button>
+                        {pagesArray.map((item: any, index: any) => {
+                            if (item < maxPageNumberLimit + 1 && item > minPageNumberLimit) {
+                                return (
+                                    <Button selected={item === currentPage} onClick={handlePage.bind(this, item)}>
+                                        <span>{item}</span>
+                                    </Button>
+                                )
+                            } else {
+                                return ""
+                            }
+                        })}
+                        <button className="icon" onClick={handleNextPage} disabled={currentPage === pagesArray[pagesArray.length - 1] ? true : false}>
+                            <ArrowRight />
+                        </button>
+                        <button className="icon" onClick={handleLast} disabled={currentPage >= pagesArray[pagesArray.length - 1] ? true : false}>
+                            <DoubleArrowRight />
+                        </button>
+                    </>) : (
+                         <Button selected={true} >
+                         <span>1</span>
+                         </Button>
+                    )
+                }
+            </div>
         </Container>
     )
 }
