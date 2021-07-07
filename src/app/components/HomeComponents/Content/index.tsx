@@ -38,8 +38,8 @@ const Content = () => {
                     setCharacters(res.data.data.results);
                     
                     setTotal(res.data.data.total)
-                    setFinalPage((Math.round(res.data.data.total / 10)) + 1)
-                    handlePagination(Math.round(res.data.data.total / 10) + 1)
+                    setFinalPage((Math.ceil(res.data.data.total / 10)))
+                    handlePagination(Math.ceil(res.data.data.total / 10))
                 })
         } else {
             api
@@ -49,8 +49,8 @@ const Content = () => {
                     setCharacters(res.data.data.results);
 
                     setTotal(res.data.data.total)
-                    setFinalPage((Math.round(res.data.data.total / 10)) + 1)
-                    handlePagination(Math.round(res.data.data.total / 10) + 1)
+                    setFinalPage((Math.ceil(res.data.data.total / 10)))
+                    handlePagination(Math.ceil(res.data.data.total / 10))
                 })
         }
     }, [currentPage, search])
@@ -91,7 +91,7 @@ const Content = () => {
     function handlePrevPage() {
         setCurrentPage(currentPage - 1)
 
-        if ((((currentPage - 1) % pageLimit)) === 0) {
+        if (currentPage-1 <= minPageNumberLimit) {
             setMaxPageNumberLimit(maxPageNumberLimit - pageLimit);
             setMinPageNumberLimit(minPageNumberLimit - pageLimit);
         }
@@ -103,7 +103,6 @@ const Content = () => {
 
         setMaxPageNumberLimit(5);
         setMinPageNumberLimit(0);
-
     }
     //Ultima pagina
     function handleLast() {
